@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- gato mexicano 4 life -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gato Mexicano | Events</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="short icon" type="image/png" href="assets\logos\gatomexicanologo.png">
+</head>
+<body>
+  <div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="content">
+      <img id="logo" src="assets\logos\logo_text.png">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="menu.html" class="desktop-link">Menu</a>
+            <input type="checkbox" id="show-features">
+            <label for="show-features">Menu</label>
+            <ul>
+							<li>
+								<a href="tacos.html" class="desktop-link">Tacos</a>
+								<input type="checkbox" id="show-services">
+								<label for="show-services">Tacos</label>
+								<ul>
+									<li><a href="#">Ga-Taco</a></li>
+									<li><a href="#">Mexi"Ta"co</a></li>
+									<li><a href="#">Pollaco</a></li>
+									<li><a href="#">Cerdaco</a></li>
+									<li><a href="#">Carnaco</a></li>
+								</ul>
+							</li>
+              <li><a href="shawarmas.html">Shawarmas</a></li>
+              <li><a href="nachos.html">Nachos</a></li>
+							<li>
+								<a href="variants.html" class="desktop-link">Variants</a>
+								<input type="checkbox" id="show-items">
+								<label for="show-items">Variants</label>
+								<ul>
+									<li><a href="gato.html">Gato</a></li>
+									<li><a href="mexican.html">Mexican</a></li>
+									<li><a href="pollo.html">Pollo</a></li>
+									<li><a href="cerdo.html">Cerdo</a></li>
+									<li><a href="carne.html">Carne</a></li>
+								</ul>
+							</li>
+            </ul>
+          </li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="contact.html">Contact</a></li>
+					<li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+      <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+      <form action="#" class="search-box">
+        <input type="text" placeholder="Type Something to Search..." required>
+        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+      </form>
+    </nav>
+  </div>
+
+<!-- haha yes -->
+
+<br><br>
+<div class="img-slider">
+  <div class="slide active">
+    <a href="keemeal.html"><img src="assets\banners\thekeemeal.png" alt=""></a>
+  </div>
+  <div class="slide">
+    <a href="discount.html"><img src="assets\banners\grandopeningdiscount.png" alt=""></a>
+  </div>
+  <div class="slide">
+    <a href="cookie.html"><img src="assets\banners\eventodegalleta.png" alt=""></a>
+  </div>
+  <div class="navigation">
+    <div class="btn active"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+var slides = document.querySelectorAll('.slide');
+var btns = document.querySelectorAll('.btn');
+let currentSlide = 1;
+
+// Javascript for image slider manual navigation
+var manualNav = function(manual){
+  slides.forEach((slide) => {
+    slide.classList.remove('active');
+
+    btns.forEach((btn) => {
+      btn.classList.remove('active');
+    });
+  });
+
+  slides[manual].classList.add('active');
+  btns[manual].classList.add('active');
+}
+
+btns.forEach((btn, i) => {
+  btn.addEventListener("click", () => {
+    manualNav(i);
+    currentSlide = i;
+  });
+});
+
+// Javascript for image slider autoplay navigation
+var repeat = function(activeClass){
+  let active = document.getElementsByClassName('active');
+  let i = 1;
+
+  var repeater = () => {
+    setTimeout(function(){
+      [...active].forEach((activeSlide) => {
+        activeSlide.classList.remove('active');
+      });
+
+    slides[i].classList.add('active');
+    btns[i].classList.add('active');
+    i++;
+
+    if(slides.length == i){
+      i = 0;
+    }
+    if(i >= slides.length){
+      return;
+    }
+    repeater();
+  }, 10000);
+  }
+  repeater();
+}
+repeat();
+</script>
+
+<div class="menu">
+    <div class="food-items">
+        <img src="assets\events\grandopeningdiscount.png">
+        <div class="details">
+            <div class="details-sub">
+                <h5>¡Grand Opening Discount!</h5>
+                <h5 class="price">  </h5>
+            </div>
+            <p>To celebrate our grand opening, we added a 40% discount offer to our best family deals in the restaurant! Buy popular family deals in a cheap price. We have the Family Deal, and the Mexican Deal.</p>
+            <button>
+              <a id="button" href="discount.html">Learn More</a>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="food-items">
+        <img src="assets\events\keemeal.png">
+        <div class="details">
+            <div class="details-sub">
+                <h5>Kee Meal</h5>
+                <h5 class="price">  </h5>
+            </div>
+            <p>The Kee meal is our first event with a whole new customized meal. This meal is actually inspired from the McDonald's specific meals. We have 3 Keewarmas (New!), 2 Hamburguesas, 3 Fritas, 3 Glasses of Sprite, and the main ingredient, the Kees and Kos sauce which is actually cheese.</p>
+            <button>
+              <a id="button" href="keemeal.html">Learn More</a>
+            </button>
+        </div>
+    </div>
+
+    <div class="food-items">
+        <img src="assets\events\eventodegalleta.png">
+        <div class="details">
+            <div class="details-sub">
+                <h5>¡Evento de Galleta!</h5>
+                <h5 class="price">  </h5>
+            </div>
+            <p>Evento de Galleta means Cookie Event. Which means every customer who comes in our restaurant will get a free cookie with our branding. This event will start at the grand opening and will end in a month. In every anniversary of this restaurant, Evento de Galleta will rise. They can pick if it’s a chocolate chip, or crinkles.</p>
+            <button>
+              <a id="button" href="cookie.html">Learn More</a>
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
